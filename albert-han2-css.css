@@ -1,0 +1,125 @@
+/*元素选择器*/
+p {
+    /*color: red !important;*/
+    /*color: blue;*/
+    font-size: 60px;
+}
+
+/*body 标签默认是有margin的*/
+body {
+    /*margin: 0;*/
+    margin: 20px;
+    background-color: aqua;
+}
+
+ul{
+    width: 500px;
+    margin: 200px auto;
+    overflow: hidden;
+    /*隐藏文字*/
+}
+
+/*类选择器*/
+.footer {
+    background-color: dimgrey;
+    width: 300px;
+    height: 100px;
+}
+
+.div1 {
+    margin-left: 30px;
+}
+
+.div2{
+    width: 300px;
+    height: 100px;
+    background-color: darkgreen;
+}
+
+.brother-selector {
+    border: 1px solid red;
+    width: 300px;
+    height: 100px;
+}
+
+/*id选择器*/
+
+#content {
+    background-color: brown;
+    width: 200px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+
+.header h1 {
+    color: red;
+}
+
+.header > p {
+    color: green;
+}
+
+
+.div2 + .div3 {
+    margin: auto;
+}
+
+
+/*属性选择器*/
+input[type="text"] {
+    border: 1px solid red; /*设置边框, 宽度为 1px 实线 红色*/
+}
+
+input[type="email"] {
+    background-color: #00FFFF;
+}
+
+[title] {
+    background-color: #FF3333;
+}
+
+input {
+    width: 500px;
+    height: 80px;
+    text-align: center; /*字体居中*/
+}
+
+#delay{
+    font-size: 20px;
+    transition-property: font-size;
+    transition-duration: 4s;
+    transition-delay: 2s;
+}
+
+.box {
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000ff;
+    transition:
+      width 2s,
+      height 2s,
+      background-color 2s,
+      rotate 2s;
+  }
+  
+  .box:hover {
+    background-color: #ffcccc;
+    width: 200px;
+    height: 200px;
+    rotate: 180deg;
+  }
+
+  .video-wrapper{
+    position: relative;
+  }
+  .play-button{
+    position: absolute
+    width: 50px;
+    height: 50px;
+    background: :user-valid center;
+    background-size: cover;
+  }
