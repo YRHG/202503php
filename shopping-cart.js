@@ -87,3 +87,29 @@ $(function () {
         }
     
     });
+    const productList = [
+        {
+        id: 1,
+        name: "无线蓝牙耳机",
+        price: 199.00,
+        img: "images/earbuds.jpg"
+        },
+        {
+        id: 2,
+        name: "便携充电宝",
+        price: 129.00,
+        img: "images/powerbank.jpg"
+        },
+        {
+        id: 3,
+        name: "高清显示器",
+        price: 899.00,
+        img: "images/monitor.jpg"
+        },
+        {
+        id: 4,
+        name: "机械键盘",
+        price: 299.00,
+        img: "images/keyboard.jpg"
+        }
+        ];
