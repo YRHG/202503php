@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            Document
+        </title>    
+        <style>
+            .move-by-keydown-event{
+                width: 300px;
+                height: 100px;
+                background-color: aquamarine;
+            }
+            .parent{
+                margin-top: 50px;
+                margin-left: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 400px;
+                height: 400px;
+                background-color: blueviolet;
+            }
+            .child{
+                width: 200px;
+                height: 200px;
+                background-image: -webkit-image-set(1);
+            }
+            .server-side-languages{
+                display: flex;
+                flex-direction: row;
+                margin: 200px;
+                list-style-type: none;
+                padding: 0;
+            }
+            .item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 50px;
+                margin-right: 20px;
+                padding: 10px;
+                background-color: #8A2BE2;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+            }
+        </style>    
+    </head>
+<body>
+    <div>
+        <p id="heading">Python，是一种广泛使用的解释型、高级和通用的编程语言。Python支持多种编程范型，包括结构化、过程式、反射式、面向对象和函数式编程。</p>
+        <ul class="server-side-languages">
+            <li class="item">Java</li>
+            <li class="item">Python</li>
+            <li class="item">JavaScript</li>
+            <li class="item">PHP</li>
+        </ul>
+        <hr>
+        <br>
+        <p id="move-by-keydown-event-output"></p>
+        <div>
+            <form action="" method="post" id="submit-event">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter a username">
+                <br>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter a email">
+                <br>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <p id="submit-event-output"></p>
+        </div>
+        <div>
+            <button id="remove-event-listerner">Click here</button>
+        </div>
+        <div id="parent" class="parent">
+            <div id="child" class="child"></div>
+        </div>
+    </div>
+    <div>
+        <button id="get-userinfo" styl="width: 100px; height: 60px; background-color: #00FF7F;	text-align: center; margin-top: 50px; margin-left: 50px;">get-userinfo</button> 
+        <ul id="userinfo"></ul>
+    </div>
+    <seript src="06.js"></seript>
+</body>
+</html>

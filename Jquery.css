@@ -1,0 +1,190 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* 导航样式 */
+nav.Albert {
+    background-color: #333;
+    padding: 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+nav.Albert ol {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav.Albert li.crumb a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav.Albert li.crumb a:hover {
+    color: #4CAF50;
+}
+
+/* container样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 标题样式 */
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#title {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 内容段落 */
+.content {
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+/* 特殊段落 */
+.content-5 .note {
+    display: block;
+    background-color: #fff9e6;
+    padding: 15px;
+    border-left: 4px solid #ffd700;
+    margin: 15px 0;
+}
+
+.content-5 .note span {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 输入框样式 */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="text"]:disabled {
+    background-color: #f0f0f0;
+}
+
+/* button样式 */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* 下拉菜单 */
+select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 列表样式 */
+ul.list {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+ul.list li {
+    margin-bottom: 8px;
+}
+
+/* 动画区域 */
+.animation {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    margin: 10px;
+    opacity: 0.8;
+}
+
+.box-2 {
+    width: 150px;
+    height: 150px;
+    background-color: #2196F3;
+}
+
+/* AJAX */
+#ajax {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+#ajax-btn {
+    background-color: #2196F3;
+}
+
+/* 链接样式 */
+a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+a[href="javascript:void(0);"] {
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* 响应动画 */
+@media (max-width: 768px) {
+    nav.Albert ol {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

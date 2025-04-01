@@ -1,0 +1,163 @@
+<!DOCTYPE heml>
+<heml lang="zh-CN">
+    <head>
+        <meta charset="TUF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free Web tutorials for HTML and CSS">
+        <meta name="author" content="Albert Han">
+        <title>Presonal profile</title>
+        <style>
+            table{
+                width: 600px;
+                height: 200px;
+                border: 1px solid #000;
+                border-color: 0cap aqua;
+            }
+            th{
+                border: 1px solid black#000;
+                text-align: center;
+                padding: 20px;
+                background-color: aqua;
+                
+                tr{
+                    border-color: aqua;
+                    border: 1px solid #000;
+                }
+
+                td{
+                    border: 1px solid #000;
+                    text-align: center;
+                    padding: 10px;
+                }
+            }
+        </style>
+
+    </head>
+    <body style="color: blue; ">
+    </body>
+    <body style="text-align:center">
+    </body>
+    <h1 calss="title-1">欢迎和我一起学习web工程师课程</h1>
+    <h2>一起学习 HTML5</h2>
+    <p>
+        超文本标记语言(英语:HyperText Markup Language,简称:HTML)是一种用于创建网页的标准标记语言。
+        <br>
+        HTML是一种基础技术,常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。
+    </p>
+    <br>
+    <!-- Sign up -->
+     <button type="submit">Sign up</button>
+     <button type="reset">Reset</button>
+     <button type="log out">Log out</button>
+    <hr>
+<!-- html程度列表 -->
+ <ul>
+    <li>0基础</li>
+    <li>初级</li>
+    <li>中级</li>
+    <li>高级</li>
+</ul>
+<!-- htmlk课程列表 -->
+ <ol>
+    <li>Lesson One</li>
+    <li>Lesson Two</li>
+    <li>Lesson Three</li>
+</ol>
+<!-- html标签 -->
+ <ul>
+    <li>标签
+        <ul>
+            <li>head</li>
+            <li>body</li>
+            <li>h1</li>
+        </ul>
+    </li>
+    <li>全局属性
+        <ul>
+            <li>class</li>
+            <li>dir</li>
+            <li>contenteditable</li>
+        </ul>
+    </li>
+ </ul>
+ <hr>
+ <a href="https://W3school.com">W3school</a>
+ <br>
+ <img src="/Library/WebServer/Documents/202503php/frontend/html/W3school.png" alt="W3shcool html Lesson">
+ <img src="./W3school.png" alt="W3school" title="W3school">
+
+ <hr>
+ <table>
+    <thead>
+        <tr>
+            <th>Front-end</th>
+            <th>Back-end</th>
+            <th>Operating System</th>
+        </tr>
+    </thead>
+ <tbody>
+    <tr>
+        <td>HTML</td>
+        <td>PHP</td>
+        <td>Linux</td>
+    </tr>
+    <tr>
+        <td>CSS</td>
+        <td>Python</td>
+        <td>MacOS</td>
+    </tr>
+    <tr>
+        <td>JavaScript</td>
+        <td>Ruby</td>
+        <td>Windows</td>
+    </tr>
+ </tbody>
+</table>
+
+<hr style="width:auto;color: aquamarine;">
+<form actioin="http://lacalhost127.0.0.1:8000/user/login" method="post">
+    <label for="username">username</label>
+    <input type="text" name="username" id="username" value="Albert Han"
+           placeholder="请输入用户名" data-coustom="from-en">
+    <br>
+    <label for="email">email</label>
+    <input type="text" name="email" id="email" value="Albert Han"
+           placeholder="请输入邮箱地址">
+    <br>
+    <label for="password">password</label>
+    <input type="password" name="password" id="password" value="Albert Han"
+           placeholder="请输入密码">
+    <br>
+    <label for="disabled">disabled</label>       
+    <intup type="text" name="disabled" id="disabled" value="disabled"
+           placeholder="disabled" disabled></intup>
+    <br>
+    <label for="city">选择城市</label>
+    <select name="city" id="city">
+        <option value="" selected>-- 请选择你的城市 --</option>
+        <option value="XI'AN">西安</option>
+        <option value="TAIYUAN">太原</option>
+        <option value="GANSU">甘肃</option>
+    </select>
+    <br>
+    <label for="content">Preasonal profile</label>
+    <br>
+    <textarea name="content" id="content" cols="80" rows="15" placeholder="请输入个人简历"></textarea>
+     <br>
+     <label for="gender-male">性别</label>
+     <input type="radio" name="gender-mali" id="gender-male" value="male">male
+     <label for="radio"></label>
+     <input type="radio" name="gender-female" id="gender-female" value="female">female
+     <label for="gender-another">another</label>
+     <input type="radio" name="gender-another" id="gender-another" value="another">another
+     <br>
+     <span>Hobby</span>
+     <label><input type="checkbox" name="Hobby" value="IT" checked>IT</label>
+     <label><input type="checkbox" name="Hobby" value="Car" checked>Car</label>
+     <label><input type="checkbox" name="Hobby" value="Darts" checked>Darts</label>
+     <br>
+
+</form>
+
+
+</heml>

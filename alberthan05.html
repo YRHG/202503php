@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card</title>
+    <!-- 修正CSS路径为相对路径 -->
+    <link rel="stylesheet" href="alberthan05.css">
+</head>
+
+<body>
+    <!-- 修正外层容器结构 -->
+    <div class="container">
+        <!-- 固定头部 -->
+        <header class="fixed-header">
+            <div class="header-content">
+                <h1 class="logo">HAN国际</h1>
+                <nav class="main-nav">
+                    <!-- 建议添加实际跳转链接 -->
+                    <a href="#home">HOME</a>
+                    <a href="#resume">个人简历</a>
+                    <a href="#skills">能力介绍</a>
+                    <a href="#blog">日常更新</a>
+                    <a href="#contact">联系我</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 个人资料卡片 -->
+        <div class="profile-container">
+            <!-- 修正类名拼写 -->
+            <div class="profile-header">
+                <img src="/Library/WebServer/Documents/202503php/frontend/html/QQ20250325-183929.png" alt="个人头像" class="profile-avatar">
+                <h1 class="profile-name">AlbertHan</h1>
+                <p class="profile-title">前端开发工程师</p>
+            </div>
+            <div class="profile-content">
+                <p class="profile-bio">热爱编程与设计，专注于创造美观实用的网页体验。</p>
+            </div>
+        </div>
+
+        <!-- 广告容器 -->
+        <div class="ad-container ad-left">赞助商1</div>
+        <div class="ad-container ad-right">赞助商2</div>
+    </div>
+
+    <!-- 登录表单容器 -->
+    <div class="container2">
+        <hr>
+        <!-- 修正表单action地址和标签结构 -->
+        <form action="http://localhost:8000/user/login" method="post">
+            <!-- 用户名 -->
+            <label for="username">用户名</label>
+            <input type="text" name="username" id="username" placeholder="请输入用户名">
+            
+            <!-- 邮箱 -->
+            <label for="email">邮箱</label>
+            <input type="email" name="email" id="email" placeholder="请输入邮箱地址">
+            
+            <!-- 密码 -->
+            <label for="password">密码</label>
+            <input type="password" name="password" id="password" placeholder="请输入密码">
+            
+            <!-- 禁用字段 -->
+            <label for="disabled-input">禁用字段</label>
+            <input type="text" name="disabled" id="disabled-input" placeholder="disabled" disabled>
+            
+            <!-- 城市选择 -->
+            <label for="city">选择城市</label>
+            <select name="city" id="city">
+                <option value="" selected>-- 请选择你的城市 --</option>
+                <option value="xian">西安</option>
+                <option value="taiyuan">太原</option>
+                <option value="gansu">甘肃</option>
+            </select>
+            
+            <!-- 个人简介 -->
+            <label for="content">个人简介</label>
+            <textarea name="content" id="content" cols="80" rows="15" placeholder="请输入个人简历"></textarea>
+            
+            <!-- 性别选择 -->
+            <fieldset>
+                <legend>性别</legend>
+                <label>
+                    <input type="radio" name="gender" value="male" checked>
+                    男
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    女
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="other">
+                    其他
+                </label>
+            </fieldset>
+            
+            <!-- 兴趣爱好 -->
+            <fieldset>
+                <legend>兴趣爱好</legend>
+                <label>
+                    <input type="checkbox" name="hobby[]" value="IT" checked>
+                    IT
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby[]" value="Car">
+                    汽车
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby[]" value="Darts">
+                    飞镖
+                </label>
+            </fieldset>
+        
+            <button type="submit">提交</button>
+        </form>
+    </div>
+    <!-- 人类bmi计算模块 -->
+    <div class="container2">
+        <h1>BMI 计算器</h1>
+        <input type="number" id="weight" placeholder="体重 (kg)" step="0.1">
+        <input type="number" id="height" placeholder="身高 (cm)" step="0.1">
+        <button id="calculateBMI">计算 BMI</button>
+        <input type="text" id="result" readonly>
+    </div>
+
+<!-- 逃逸鼠标动画 -->
+    <div id="escape">
+    
+    </div>
+
+
+  <script src="han05.js"></script>
+</body>
+
+
+</html>
