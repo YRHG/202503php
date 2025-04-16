@@ -256,3 +256,131 @@ $totalPrice = $userCount * $pricePerItem;
 $statusMessage = $message;
 echo $statusMessage; // 输出: 学习 PHP
 echo $totalPrice;   // 输出: 2098.95
+
+echo"<br>";
+
+//if 语句
+//条件表达式 (Condition Expression):
+// 这是一个最终会计算出布尔值 (true 或 false) 的表达式。
+// false（false, 0, 0.0, "", "0", [], null），其他大部分值被认为是 true。
+$age = 20;
+
+if ($age >= 18) {
+    echo "你已经是成年人了。\n";
+}
+$is_logged_in = true;
+if ($is_logged_in) { // 直接判断布尔变量
+    echo "用户已登录。\n";
+}
+
+$username = "Alice";
+if ($username) { // 非空字符串被认为是 true
+    echo "用户名存在。\n";
+}
+$count = 0;
+if ($count) { // 整数 0 被认为是 false，所以这块代码不会执行
+    echo "计数大于零。\n";
+}
+
+echo "<br>";
+
+//if...elseif...else 语句
+//当有多个互斥的条件需要判断时使用
+// if...elseif...else 结构。PHP 会从上到下依次检查每个条件
+//第一个为 true 的 if 或 elseif 条件对应的代码块会被执行。
+//一旦有一个条件满足并执行了代码块，后面的所有 elseif 和 else 块都会被**跳过**。
+//如果所有的 if 和 elseif 条件都为 false，则执行可选的 else 块中的代码。
+$score = 85;
+
+if ($score >= 90) {
+    echo "优秀 (A)";
+} elseif ($score >= 80) { // 到这里时，$score >= 90 肯定是 false 了
+    echo "良好 (B)"; // 因为 85 >= 80，执行这句，然后跳出整个结构
+} elseif ($score >= 70) {
+    echo "中等 (C)";
+} elseif ($score >= 60) {
+    echo "及格 (D)";
+} else {
+    echo "不及格 (F)";
+}
+// 输出: 良好 (B)
+
+echo "<br>";
+
+//替代语法
+//foreach替代
+//swithc替代
+
+//</<!doctype html>
+//<html lang="en">
+//<head>
+//<meta charset="UTF-8">
+//             <meta name="viewport" content="width=device-width, initial-scale=1">
+//             <title>Document</title>
+//</head>
+//<body>
+//  <p>
+//<?php if ($is_admin): ?>
+//欢迎回来，管理员！
+//<a href="/admin">进入管理后台</a>
+//<?php elseif ($is_logged_in): ?>
+//    <?php echo htmlspecialchars($username); ?>！
+//<?php else: ?>
+//    请 <a href="/login">登录</a> 或 <a href="/register">注册</a>。
+//<?php endif; ?>
+//</p>
+//</body>
+//</html>>
+
+//switch (表达式) {
+//case 值1:
+//    // 如果表达式的值 等于 值1，执行这里的代码
+//    break; // 非常重要！跳出 switch 语句
+//
+//case 值2:
+//    // 如果表达式的值 等于 值2，执行这里的代码
+//    break;
+//
+//case 值3:
+//case 值4: // 可以将多个 case 合并，如果它们执行相同的代码
+//    // 如果表达式的值 等于 值3 或 值4，执行这里的代码
+//    break;
+//
+//default: // 可选的
+//    // 如果表达式的值不匹配上面任何一个 case，执行这里的代码
+//}
+
+echo "<br>";
+<?php
+$role = 'editor'; // 假设用户角色是编辑
+
+switch ($role) {
+    case 'admin':
+        echo "显示：用户管理、文章管理、系统设置\n";
+        break; // 执行完 admin 的就跳出
+
+    case 'editor':
+        echo "显示：文章管理\n";
+        // 注意这里故意没有 break! 会继续执行下面的 case
+
+    case 'author':
+        echo "显示：写新文章\n";
+        break; // 执行完 author 的就跳出 (editor 角色也会执行到这里)
+
+    case 'subscriber':
+        echo "显示：查看文章\n";
+        break;
+
+    default:
+        echo "无效的角色或未登录用户。\n";
+}
+
+/*
+输出会是：
+    显示：文章管理
+    显示：写新文章
+*/
+?>
+
+echo "<br>";
+//循环
