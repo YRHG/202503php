@@ -275,11 +275,3 @@ $cityDate = [
 
 $template = "The next F1 race will be in city on date.";
 
-// 定义替换函数
-$replaceFn = function ($city, $raceDate) use ($template) {
-    return str_replace(['city', 'date'], [$city, $raceDate], $template);
-};
-
-// 批量处理并输出
-$results = array_map($replaceFn, array_keys($cityDate), $cityDate);
-echo implode("<br>", $results);
