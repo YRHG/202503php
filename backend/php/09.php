@@ -261,17 +261,3 @@ $usersData = array_map(function ($user) {
     return $user;
 }, $users);
 echoWithBr(json_encode($usersData));
-
-# 7.6 迭代与函数式处理
-// 需要渲染的字符串 The next F1 race will be in {{ city }} on {{ date }}.
-// 给定的变量值 ['city' => 'Melbourne', 'date' => '2022-04-08']
-// 执行结果 The next F1 race will be in Melbourne on 2022-04-08.
-
-$cityDate = [
-    '北京' => '2025-04-30',
-    '上海' => '2025-05-05',
-    '广州' => '2025-05-19'
-];
-
-$template = "The next F1 race will be in city on date.";
-
