@@ -44,7 +44,7 @@ session_start();
 
 setcookie($cookie_name, $cookie_value, $expiry_time, "/", "", true, true);
 
-varDumpWithBr($_COOKIE['cookie_name']);
+varDumpWithBr($_COOKIE['albert']);
 
 // ❓同源策略
 // ❓跨域请求
