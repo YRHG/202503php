@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/basics",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "hanhongze",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "giggsey/libphonenumber-for-php": "^8.12"
+  }
+}

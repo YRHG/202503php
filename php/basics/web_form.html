@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Library/WebServer/Documents/202503php/frontend/html/8/Bootstrap Grid v5.3.3.css" rel="stylesheet">
+    <title>基础人口调查问卷</title>
+</head>
+<body>
+<form class="needs-validation" method="post"
+      action="http://localhost/202503php/php/basics/web_form.php?version=1.0"
+      enctype="multipart/form-data"
+                 novalidate   >
+    <div class="form-row">
+        <label for="age">您的年龄范围是？</label><br>
+        <select id="age" name="age">
+            <option value="under18">18岁以下</option>
+            <option value="18-24">18-24岁</option>
+            <option value="25-34">25-34岁</option>
+            <option value="35-44">35-44岁</option>
+            <option value="45-54">45-54岁</option>
+            <option value="55-64">55-64岁</option>
+            <option value="65plus">65岁及以上</option>
+            <option value="prefer_not_say">不愿透露</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-row">
+        <label>您的性别认同是？</label><br>
+        <input type="radio" id="gender_female" name="gender" value="female">
+        <label for="gender_female">女</label><br>
+        <input type="radio" id="gender_male" name="gender" value="male">
+        <label for="gender_male">男</label><br>
+        <input type="radio" id="gender_nonbinary" name="gender" value="nonbinary">
+        <label for="gender_nonbinary">非二元性别</label><br>
+        <input type="radio" id="gender_other" name="gender" value="other">
+        <label for="gender_other">其他（请注明）</label>
+        <input type="text" id="gender_other_specify" name="gender_other_specify"><br>
+        <input type="radio" id="gender_prefer_not_say" name="gender" value="prefer_not_say">
+        <label for="gender_prefer_not_say">不愿透露</label>
+    </div>
+    <br>
+    <div class="form-row">
+        <label for="education">您已完成的最高学历是？</label><br>
+        <select id="education" name="education">
+            <option value="less_than_high_school">高中以下</option>
+            <option value="high_school">高中或同等学历</option>
+            <option value="some_college">一些大学，但没有学位</option>
+            <option value="associate_degree">副学士学位</option>
+            <option value="bachelor_degree">学士学位</option>
+            <option value="graduate_degree">研究生学位（硕士、博士等）</option>
+            <option value="prefer_not_say">不愿透露</option>
+        </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-primary">提交</button>
+</form>
+<script src="/Library/WebServer/Documents/202503php/frontend/html/8/bootstrap.min.js"></script>
+<script>
+    (() => {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
+</body>
+</html>

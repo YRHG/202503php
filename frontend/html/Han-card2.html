@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card</title>
+    <link rel="stylesheet" href="/Library/WebServer/Documents/202503php/frontend/html/id-card-css.css">
+</head>
+<!-- 个人主页面 -->
+<body>
+      <div class="profile-container">
+            <div class="profile-heade">
+                <img src="/Library/WebServer/Documents/202503php/frontend/html/QQ20250325-183929.png" alt="个人头像" class="profile-avatar">
+                <h1 class="profile-name">AlbertHan</h1>
+                <p class="profile-title">前端开发工程师</p>
+            </div>
+            
+            <div class="profile-content">
+                <p class="profile-bio">热爱编程与设计，专注于创造美观实用的网页体验。</p>
+            </div>
+        </div>
+      </div>
+      <!-- 广告方块 -->
+     <div class="ad-container ad-left">赞助商1</div>
+     <div class="ad-container ad-right">赞助商2</div>
+      <!-- 页面头部固定 -->
+      <header class="fixed-header">
+            <div class="header-content">
+                <h1 class="logo">HAN国际</h1>
+                <nav class="main-nav">
+                    <a href="#">HOME</a>
+                    <a href="#">个人简历</a>
+                    <a href="#">能力介绍</a>
+                    <a href="#">日常更新</a>
+                    <a href="#">联系我</a>
+                </nav>
+            </div>
+        </header>
+    <div class="content">
+        <hr style="width:auto;color: rgb(245, 1, 1);">
+     <form actioin="http://lacalhost127.0.0.1:8000/user/login" method="post">
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" value="Albert Han"
+                   placeholder="请输入用户名" data-coustom="from-en">
+            <br>
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" value="Albert Han"
+                   placeholder="请输入邮箱地址">
+            <br>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" value="Albert Han"
+                   placeholder="请输入密码">
+            <br>
+            <label for="disabled">disabled</label>       
+            <intup type="text" name="disabled" id="disabled" value="disabled"
+                   placeholder="disabled" disabled></intup>
+            <br>
+            <label for="city">选择城市</label>
+            <select name="city" id="city">
+                <option value="" selected>-- 请选择你的城市 --</option>
+                <option value="XI'AN">西安</option>
+                <option value="TAIYUAN">太原</option>
+                <option value="GANSU">甘肃</option>
+            </select>
+            <br>
+            <label for="content">Preasonal profile</label>
+            <br>
+            <textarea name="content" id="content" cols="80" rows="15" placeholder="请输入个人简历"></textarea>
+             <br>
+             <label for="gender-male">性别</label>
+             <input type="radio" name="gender-mali" id="gender-male" value="male">male
+             <label for="radio"></label>
+             <input type="radio" name="gender-female" id="gender-female" value="female">female
+             <label for="gender-another">another</label>
+             <input type="radio" name="gender-another" id="gender-another" value="another">another
+             <br>
+             <span>Hobby</span>
+             <label><input type="checkbox" name="Hobby" value="IT" checked>IT</label>
+             <label><input type="checkbox" name="Hobby" value="Car" checked>Car</label>
+             <label><input type="checkbox" name="Hobby" value="Darts" checked>Darts</label>
+             <br>
+        </div>
+        
+     </form>
+</body>
+</html>

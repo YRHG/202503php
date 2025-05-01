@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 
 # JetBrains 系列（IntelliJ IDEA, PyCharm, WebStorm, etc.）
 .idea/
+.idea
 *.iml
 *.ipr
 *.iws
@@ -91,3 +92,11 @@ docker-compose.override.yml
 
 # 如果有其他特定的文件需要忽略，可以在此添加
 student-info.md
+info.md
+
+# 忽略前端练习项目里面的 images 文件夹下的所有图片
+frontend/shopping-cart/images/
+
+# 忽略后端练习项目里面的 vendor 文件夹
+# 忽略 composer 安装包 vendor 目录
+vendor/
