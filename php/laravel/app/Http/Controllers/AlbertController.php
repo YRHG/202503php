@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -9,7 +9,7 @@ use Illuminate\Foundation\Application;
 class AlbertController extends Controller
 {
     /**
-     * @return void
+     * @return Factory|Application|View
      */
     public function index(): Factory|Application|View
     {
