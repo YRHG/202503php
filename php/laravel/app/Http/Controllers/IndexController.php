@@ -1,19 +1,19 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     /**
-     * @param Request $request
-     * @return Factory|View|Application|
+     * Display the home page.
      *
-     */public function home(Request $request):Factory|View|Application
+     * @return Factory|Application|View
+     */
+    public function home(): Factory|Application|View
     {
         return view('index.home');
     }

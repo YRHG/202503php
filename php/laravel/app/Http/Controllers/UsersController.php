@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,19 +20,19 @@ class UsersController extends Controller
         return view('users.create');
     }
 
-/**
- * Store a new user.
- *
- * @param Request $request
- * @return void
- */
-#[NoReturn] public function store(Request $request): void
-{
-    dd($request->all());
-    # todo validate the request and create a new user
-    # todo send a welcome email to the user
-    # todo log the user in
-}
+    /**
+     * Store a new user.
+     *
+     * @param Request $request
+     * @return void
+     */
+    #[NoReturn] public function store(Request $request): void
+    {
+        dd($request->all());
+        # todo validate the request and create a new user
+        # todo send a welcome email to the user
+        # todo log the user in
+    }
 
     /**
      * Show the user profile.
@@ -41,9 +41,9 @@ class UsersController extends Controller
      * @return void
      */
     #[NoReturn] public function show(?int $id = 99): void
-{
-    dd($id);
-    # todo get the user by id and return the view
-    // return view('users.show', ['id' => $id]);
-}
+    {
+        dd($id);
+        # todo get the user by id and return the view
+        // return view('users.show', ['id' => $id]);
+    }
 }
