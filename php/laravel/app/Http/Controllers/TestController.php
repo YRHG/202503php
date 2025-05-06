@@ -13,12 +13,12 @@ class TestController extends Controller
     public function index(): Factory|Application|View
     {
         $data = [
-            'name' => 'Laravel.中间件.控制器',
+            'name' => 'Laravel',
             'version' => '12.x',
-            'master' => 'Albert Han',
+            'author' => 'Albert Han',
         ];
 
-        $master = $data['master'];
+        $author = 'Albert Han';
 
         $categories = Categories::paginate($this->perPage);
 
@@ -26,6 +26,6 @@ class TestController extends Controller
 
         // session()->flash('success', 'This is a flash message!');
 
-        return view('test.index', compact('data', 'master', 'categories', 'html'));
+        return view('test.index', compact('data', 'author', 'categories', 'html'));
     }
 }

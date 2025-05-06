@@ -15,7 +15,7 @@
                 <p>{{ $data['author'] }}</p>
             </div>
         @endif
-        <p class="mb-4">此网站的作者是: {{ $master }}</p>
+        <p class="mb-4">此网站的作者是: {{ $author }}</p>
 
         @if(!$categories->isEmpty())
             @foreach($categories as $category)
