@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,3 +45,5 @@ Route::resource('products', ProductsController::class);
 // Route::get('products', [ProductsController::class, 'index'])->name('products.index');
 // Route::post('products', [ProductsController::class, 'store'])->name('products.store');
 // ...
+
+Route::get('/test', [TestController::class, 'index'])->name('test');
