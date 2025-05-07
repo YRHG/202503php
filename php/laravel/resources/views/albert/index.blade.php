@@ -2,116 +2,126 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户登录</title>
+    <title>Albert 控制面板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
+        :root {
+            color-scheme: dark;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            padding: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            line-height: 1.6;
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        h1, h2 {
+            color: #ffffff;
         }
 
-        .login-box {
-            background-color: #34495e;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        input, textarea, select, button {
+            font: inherit;
+            background: #2c2c2e;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #f0f0f0;
+            padding: 0.5rem;
             width: 100%;
-            max-width: 400px;
+            box-sizing: border-box;
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
-
-        label {
-            font-size: 16px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #7f8c8d;
-            border-radius: 4px;
-            background-color: #ecf0f1;
-            color: #2c3e50;
-            font-size: 16px;
-        }
-
-        input[type="submit"] {
-            background-color: #e74c3c;
-            border: none;
-            color: white;
+        button {
             cursor: pointer;
-            font-size: 18px;
+            background-color: #007aff;
+            color: white;
+            border: none;
+            margin-top: 0.5rem;
         }
 
-        input[type="submit"]:hover {
-            background-color: #c0392b;
+        button:hover {
+            background-color: #005bb5;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
+        form {
+            margin-bottom: 2rem;
+            background: #2b2b2b;
+            padding: 1rem;
+            border-radius: 10px;
         }
 
-        @media (max-width: 600px) {
-            .login-box {
-                padding: 20px;
-                width: 80%;
-            }
+        .record {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #444;
+        }
 
-            h2 {
-                font-size: 20px;
-            }
+        .success {
+            background: #2e8b57;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+        }
 
-            label {
-                font-size: 14px;
-            }
-
-            input {
-                font-size: 14px;
-            }
+        .error {
+            background: #a94442;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="login-box">
-        <h2>用户登录</h2>
-        <form action="{{ route('albert.login') }}" method="POST">
-            <!-- 用户名和密码字段 -->
-            <label for="username">用户名</label>
-            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+<h1>Albert 控制面板</h1>
 
-            <label for="password">密码</label>
-            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+@if(session('success'))
+    <div class="success">{{ session('success') }}</div>
+@endif
 
-            <input type="submit" value="登录">
-        </form>
+@if($errors->any())
+    <div class="error">
+        <ul>
+            @foreach($errors->all() as $err)
+                <li>{{ $err }}</li>
+            @endforeach
+        </ul>
     </div>
-</div>
+@endif
 
-<div class="footer">
-    <p>  2025 </p>
-</div>
+<!-- 留言表单 -->
+<form method="POST" action="{{ route('albert.post.store') }}">
+    @csrf
+    <h2>留言</h2>
+    <textarea name="message" rows="4" placeholder="写下你的留言..."></textarea>
+    <button type="submit">提交留言</button>
+</form>
+
+<!-- 上传作品表单 -->
+<form method="POST" action="{{ route('albert.work.upload') }}" enctype="multipart/form-data">
+    @csrf
+    <h2>上传作品</h2>
+    <input type="text" name="title" placeholder="标题"><br><br>
+    <textarea name="content" rows="3" placeholder="作品内容"></textarea><br><br>
+    <input type="file" name="image"><br>
+    <button type="submit">上传作品</button>
+</form>
+
+<!-- 登录记录展示（需配合控制器返回变量 $records） -->
+@isset($records)
+    <h2>你的登录记录</h2>
+    @forelse($records as $record)
+        <div class="record">
+            IP: {{ $record->ip_address ?? '未知' }} <br>
+            浏览器: {{ $record->user_agent ?? '未知' }} <br>
+            时间: {{ $record->created_at->format('Y-m-d H:i:s') }}
+        </div>
+    @empty
+        <p>暂无记录。</p>
+    @endforelse
+@endisset
 
 </body>
 </html>

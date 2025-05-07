@@ -47,3 +47,22 @@ Route::resource('products', ProductsController::class);
 // ...
 
 Route::get('/test', [TestController::class, 'index'])->name('test');
+
+use App\Http\Controllers\AlbertController;
+
+// 不再重复定义 / 和 /login
+// 把 AlbertController 的功能集成进来，并挂在合适的新路径上
+Route::middleware(['auth'])->group(function () {
+
+    // 留言功能（路径调整为 /albert/post）
+    Route::post('/albert/post', [AlbertController::class, 'store'])->name('albert.post.store');
+
+    // 查看登录记录
+    Route::get('/albert/login-records', [AlbertController::class, 'loginRecords'])->name('albert.login.records');
+
+    // 管理员软删除留言
+    Route::delete('/albert/post/{id}', [AlbertController::class, 'destroy'])->name('albert.post.destroy');
+
+    // 超级管理员上传作品
+    Route::post('/albert/upload-work', [AlbertController::class, 'uploadWork'])->name('albert.work.upload');
+});
