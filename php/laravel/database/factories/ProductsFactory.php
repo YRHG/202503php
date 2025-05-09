@@ -18,7 +18,7 @@ class ProductsFactory extends Factory
     public function definition(): array
     {
         return [
-            // 生成一些口号或商业短语
+            // 尝试生成一些口号或商业短语，可能沾边
             'name' => $this->faker->catchPhrase(),
             'price' => $this->faker->randomFloat(2, 100, 10000),
             'category_id' => $this->faker->numberBetween(1, 10),

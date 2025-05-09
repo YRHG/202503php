@@ -15,10 +15,10 @@ class ProductsController extends Controller
      */
     public function index(): Factory|Application|View
     {
-        // 获取所有产品数据，，每页显示 20 条记录
-        $products = Products::orderBy('created_at', 'desc')->paginate(20);
+        // 获取所有产品数据，使用分页，每页显示 20 条记录
+        $products = Products::orderBy('created_at', 'desc')->with('category')->paginate(20);
 
-        // 返回视图传递产品数据
+        // 返回视图并传递产品数据
         return view('products.index', compact('products'));
     }
 

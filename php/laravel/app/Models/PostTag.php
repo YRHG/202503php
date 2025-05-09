@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- *
+ * 
  *
  * @method static PostTagFactory factory($count = null, $state = [])
  * @method static Builder<static>|PostTag newModelQuery()

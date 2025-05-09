@@ -44,7 +44,7 @@ use Illuminate\Support\Carbon;
  */
 class Products extends Model
 {
-    use HasFactory, softDeletes;
+    use HasFactory, SoftDeletes;
 
     /**
      * A product belongs to a category.

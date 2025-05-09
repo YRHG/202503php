@@ -10,12 +10,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- *
+ * 
  *
  * @method static MetadataFactory factory($count = null, $state = [])
  * @method static Builder<static>|Metadata newModelQuery()
  * @method static Builder<static>|Metadata newQuery()
  * @method static Builder<static>|Metadata query()
+ * @property-read \App\Models\Post|null $post
  * @mixin Eloquent
  */
 class Metadata extends Model

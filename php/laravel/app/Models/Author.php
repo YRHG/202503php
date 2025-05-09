@@ -10,12 +10,26 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- *
+ * 
  *
  * @method static AuthorFactory factory($count = null, $state = [])
  * @method static Builder<static>|Author newModelQuery()
  * @method static Builder<static>|Author newQuery()
  * @method static Builder<static>|Author query()
+ * @property int $id
+ * @property string $name 名字
+ * @property string $email 电子邮件
+ * @property string $bio 简介
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Post> $posts
+ * @property-read int|null $posts_count
+ * @method static Builder<static>|Author whereBio($value)
+ * @method static Builder<static>|Author whereCreatedAt($value)
+ * @method static Builder<static>|Author whereEmail($value)
+ * @method static Builder<static>|Author whereId($value)
+ * @method static Builder<static>|Author whereName($value)
+ * @method static Builder<static>|Author whereUpdatedAt($value)
  * @mixin Eloquent
  */
 class Author extends Model
