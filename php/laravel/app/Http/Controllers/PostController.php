@@ -8,6 +8,7 @@ use App\Models\Post;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -19,6 +20,9 @@ class PostController extends Controller
      */
     public function index(Request $request): View
     {
+        // 我们这个只是位了测试日志能正确记录
+        // Log::channel('order')->error('订单支付失败', $request->header());
+
         if ($request->get('search')) {
             $posts = Post::with('author')
                 ->where('title', 'like', '%' . $request->get('search') . '%')
@@ -51,7 +55,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request): RedirectResponse
     {
-        //随机拿一个作者 id 给当前要创建的这个文章
+        // 因为我们目前没有做作者登录这个功能, 所以我们这里随机拿一个作者 id 给当前要创建的这个文章
         if (!$request->has('author_id')) {
             $request->merge(['author_id' => Author::pluck('id')->random()]);
         }
